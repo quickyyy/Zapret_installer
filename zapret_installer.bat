@@ -3,9 +3,9 @@ chcp 65001 >nul
 cls
 set "downloadUrl=https://github.com/quickyyy/Zapret_installer/releases/download/ZipFile/zapret.zip"
 set "zipPath=%TEMP%\rbf.zip"
-set "extractPath=C:\RBF_furry_lovers"              
-set "targetFile=%extractPath%\preset_general.cmd"          
-set "servicefile=%extractPath%\create_service_general.cmd"
+set "extractPath=C:\zapret_installer"              
+set "targetFile=%extractPath%\general.cmd"          
+set "servicefile=%extractPath%\create_service.cmd"
 set "shortcutName=%USERPROFILE%\Desktop\RKNsosat.lnk"
 echo [#] Zapret_installer
 echo [#] github - https://github.com/quickyyy/Zapret_installer
@@ -35,6 +35,13 @@ set /p userInput=[*] Создать службу? (Автоматический 
 if /i "%userInput%"=="Y" (
     echo [*] Выполнение файла...
     "%servicefile%"
+    cls
+    echo [#] Zapret_installer
+    echo [#] github - https://github.com/quickyyy/Zapret_installer
+    echo [+] Готово!
+    echo [#] Спасибо за использование Zapret_installer!
+    @echo https://github.com/quickyyy/Zapret_installer > "C:\zapret_installer\github.txt"
+    pause
     if %errorlevel% neq 0 (
         echo [-] Ошибка при выполнении файла.
         pause
@@ -56,4 +63,5 @@ echo [#] Zapret_installer
 echo [#] github - https://github.com/quickyyy/Zapret_installer
 echo [+] Готово!
 echo [#] Спасибо за использование Zapret_installer!
+@echo https://github.com/quickyyy/Zapret_installer > "C:\zapret_installer\github.txt"
 pause
